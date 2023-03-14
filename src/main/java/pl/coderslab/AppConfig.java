@@ -16,13 +16,13 @@ import javax.persistence.EntityManagerFactory;
 @EnableWebMvc
 @ComponentScan("pl.coderslab")
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "pl.coderslab.repository")
+@EnableJpaRepositories(basePackages = "pl.coderslab")
 public class AppConfig implements WebMvcConfigurer {
     @Bean
     public LocalEntityManagerFactoryBean entityManagerFactory() {
-        LocalEntityManagerFactoryBean emfb = new LocalEntityManagerFactoryBean();
-        emfb.setPersistenceUnitName("workshop06");
-        return emfb;
+        LocalEntityManagerFactoryBean entityManagerFactoryBean = new LocalEntityManagerFactoryBean();
+        entityManagerFactoryBean.setPersistenceUnitName("workshopBookApi");
+        return entityManagerFactoryBean;
     }
 
     @Bean
